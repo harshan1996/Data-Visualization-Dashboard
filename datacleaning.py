@@ -1,8 +1,8 @@
 from pymongo import MongoClient
-from config import password
+from config import password,collection_name,database_name
 client = MongoClient(f"mongodb+srv://Harshan:{password}@firstcluster.zxdpy3p.mongodb.net/?retryWrites=true&w=majority")
-db=client["B_C_pymongo"]
-collection=db["task-5"]
+db=client[database_name]
+collection=db[collection_name]
 
 import json
 file_open = open('jsondata.json')
