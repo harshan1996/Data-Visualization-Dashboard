@@ -3,12 +3,12 @@ import dash_bootstrap_components as dbc
 import plotly.express as px
 import pandas as pd
 from pymongo import MongoClient
-from config import password
+from config import password,collection_name,database_name
 
 """setting up the mongodb database using pymongo"""
 client= MongoClient(f"mongodb+srv://Harshan:{password}@firstcluster.zxdpy3p.mongodb.net/?retryWrites=true&w=majority")
-db=client["B_C_pymongo"]
-collection=db["task-3"]
+db=client[database_name]
+collection=db[collection_name]
 
 df = pd.DataFrame(list(collection.find({})))[:300]
 df=df[["intensity","country","end_year","topic","impact","relevance","likelihood","sector"]]
