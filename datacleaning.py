@@ -15,18 +15,3 @@ for i in listNew:
 print(len(listNew))
     
 file_open.close()
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
